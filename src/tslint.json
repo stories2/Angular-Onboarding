@@ -1,0 +1,17 @@
+{
+  "extends": "../tslint.json",
+  "rules": {
+    "directive-selector": [
+      true,
+      "attribute",
+      "angOnboarding",
+      "camelCase"
+    ],
+    "component-selector": [
+      true,
+      "element",
+      "ang-onboarding",
+      "kebab-case"
+    ]
+  }
+}
