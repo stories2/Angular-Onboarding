@@ -1,4 +1,4 @@
-# Onboardig for angular7
+# Onboarding for angular7
 
 ![demo](demo/demo.gif)
 
