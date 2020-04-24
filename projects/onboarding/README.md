@@ -1,6 +1,6 @@
 # Onboarding for angular7
 
-![demo](/demo/demo.gif)
+![demo](demo/demo.gif)
 
 Show onboarding for angular 7.
 
@@ -77,6 +77,65 @@ storyBoard = [
 
 `direction`
 - Onboarding view's direction. `left`, `top`, `right`, `bottom` avaliable.
+
+-------------------------
+
+`app.module.ts`
+
+```
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+
+import { AppComponent } from './app.component';
+
+import { OnboardingModule } from 'story-onboarding';
+
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    OnboardingModule // <-- onboarding module
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+
+```
+
+OR
+
+`app.module.ts`
+
+```
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+
+import { AppComponent } from './app.component';
+
+import { MatButtonModule, MatCardModule } from '@angular/material';
+
+import { OnboardingComponent } from 'story-onboarding';
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    OnboardingComponent // <-- onboarding component
+  ],
+  imports: [
+    BrowserModule,
+
+    MatButtonModule, // <-- needed
+    MatCardModule // <-- needed
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+```
+
 
 ## Build Library
 
