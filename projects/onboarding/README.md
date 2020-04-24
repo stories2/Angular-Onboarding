@@ -1,24 +1,98 @@
-# Onboarding
+# AngularOnboarding
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.0.
+![demo](/demo/demo.gif)
 
-## Code scaffolding
+Show onboarding for angular 7.
 
-Run `ng generate component component-name --project Onboarding` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project Onboarding`.
-> Note: Don't forget to add `--project Onboarding` or else it will be added to the default project in your `angular.json` file. 
+## How to use
 
-## Build
+```
+<Ng7-Onboarding [story]="storyBoard" [gap]='20' (done)="endOfTutorial($event)"></Ng7-Onboarding>
+```
 
-Run `ng build Onboarding` to build the project. The build artifacts will be stored in the `dist/` directory.
+`story`
+- Set onboarding flow array.
 
-## Publishing
+`gap`
+- Set gap between highlighted DOM and onboarding popup.
 
-After building your library with `ng build Onboarding`, go to the dist folder `cd dist/onboarding` and run `npm publish`.
+`done` 
+- Trigger when onboarding is ended.
 
-## Running unit tests
+### Optional
 
-Run `ng test Onboarding` to execute the unit tests via [Karma](https://karma-runner.github.io).
+`btnNextText`
+- Set next button text.
 
-## Further help
+`btnPrevText`
+- Set previous button text.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+`btnDoneText`
+- Set done button text.
+
+### Story board data
+
+```
+storyBoard = [
+    {
+      id: 'h1Wellcome',
+      text: 'This is wellcome',
+      direction: 'bottom'
+    },
+    {
+      id: 'angularIcon',
+      text: 'This is icon',
+      direction: 'right'
+    },
+    {
+      id: 'angularIcon',
+      text: 'This is icon',
+      direction: 'left'
+    },
+    ...
+    {
+      id: 'cli',
+      text: 'This is cli',
+      direction: 'bottom'
+    },
+    {
+      id: 'blog',
+      text: 'This is blog',
+      direction: 'bottom'
+    }
+  ] as StoryOnboardingModel[];
+```
+
+`id`
+- Will highlight DOM's ID
+
+```
+<h1 id="h1Wellcome"> <!-- h1Wellcome is id -->
+    Welcome to {{ title }}!
+</h1>
+```
+
+`text`
+- Onboarding message.
+
+`direction`
+- Onboarding view's direction. `left`, `top`, `right`, `bottom` avaliable.
+
+## Build Library
+
+```
+ng build Onboarding
+```
+
+## Publish Library
+
+```
+cd dist/onboarding
+npm publish
+```
+
+### Reference
+
+How to create angular library [link](https://medium.com/@esanjiv/complete-beginner-guide-to-publish-an-angular-library-to-npm-d42343801660)
+
+CSS Spotlight [link](http://jsfiddle.net/XYXHR/)
