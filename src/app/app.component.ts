@@ -9,24 +9,66 @@ import { StoryOnboardingModel } from 'projects/onboarding/src/lib/models/StoryOn
 export class AppComponent implements OnInit, AfterViewInit, AfterViewChecked {
 
   title = 'AngularOnboarding';
-
-  @ViewChild('h2Ele') h2Ele: ElementRef;
+  isTutorialMode: boolean;
 
   storyBoard = [
     {
-      id:
+      id: 'h1Wellcome',
+      text: 'This is wellcome',
+      direction: 'bottom'
+    },
+    {
+      id: 'angularIcon',
+      text: 'This is icon',
+      direction: 'right'
+    },
+    {
+      id: 'angularIcon',
+      text: 'This is icon',
+      direction: 'left'
+    },
+    {
+      id: 'h2EleID',
+      text: 'This is text',
+      direction: 'top'
+    },
+    {
+      id: 'ligroup',
+      text: 'This is group',
+      direction: 'top'
+    },
+    {
+      id: 'tourOfHeroes',
+      text: 'This is tutorial',
+      direction: 'bottom'
+    },
+    {
+      id: 'cli',
+      text: 'This is cli',
+      direction: 'bottom'
+    },
+    {
+      id: 'blog',
+      text: 'This is blog',
+      direction: 'bottom'
     }
   ] as StoryOnboardingModel[];
 
-  ngOnInit(): void {
+  constructor() {
+    this.isTutorialMode = false;
+  }
 
+  ngOnInit(): void {
   }
 
   ngAfterViewInit(): void {
-    console.log('h2Ele', this.h2Ele.nativeElement);
+    this.isTutorialMode = true;
   }
 
   ngAfterViewChecked(): void {
-    console.log('ngAfterViewChecked ngAfterViewChecked')
+  }
+
+  endOfTutorial(test: any) {
+    this.isTutorialMode = false;
   }
 }
