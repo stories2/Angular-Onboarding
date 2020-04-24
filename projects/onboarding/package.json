@@ -19,8 +19,9 @@
   },
   "homepage": "https://github.com/stories2/Angular-Onboarding",
   "keywords": [
-    "angular",
-    "typescript"
+    "angular7",
+    "typescript",
+    "onboarding"
   ],
   "license": "MIT"
 }
