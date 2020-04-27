@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { OnboardingComponent } from './onboarding.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CommonModule } from '@angular/common';
 
 import { MatButtonModule, MatCardModule } from '@angular/material';
 
 @NgModule({
   declarations: [OnboardingComponent],
   imports: [
-    BrowserAnimationsModule,
+    CommonModule,
 
     MatCardModule,
     MatButtonModule
